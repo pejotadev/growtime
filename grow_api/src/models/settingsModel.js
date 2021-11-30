@@ -12,13 +12,19 @@ const settingsModel = database.define('settings', {
         type: Sequelize.STRING,
         allowNull: false
     },
-    password:{
-        type: Sequelize.INTEGER,
-        allowNull: false,
+    password: {
+        type: Sequelize.STRING,
+        allowNull: false
     },
+    phone: Sequelize.STRING,
     apiUrl: Sequelize.STRING,
+    streamUrl: Sequelize.STRING,
     accessKey: Sequelize.STRING,
     secretKey: Sequelize.STRING,
+    sendGridKey: Sequelize.STRING,
+    twilioSid: Sequelize.STRING,
+    twilioToken: Sequelize.STRING,
+    twilioPhone: Sequelize.STRING,
     createdAt: Sequelize.DATE,
     updatedAt: Sequelize.DATE
 }, {
@@ -26,6 +32,6 @@ const settingsModel = database.define('settings', {
         fields: ['email'],
         unique: true
     }]
-});
+})
 
 module.exports = settingsModel;

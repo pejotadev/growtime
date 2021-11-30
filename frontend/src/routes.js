@@ -2,15 +2,18 @@ import React from 'react';
 import { Route, BrowserRouter, Redirect } from 'react-router-dom';
 import Login from './public/Login/Login';
 import Settings from './private/Settings/Settings';
+import Dashboard from './private/Dashboard/Dashboard';
+import Orders from './private/Orders/Orders';
+import Monitors from './private/Monitors/Monitors';
+import Automations from './private/Automations/Automations';
+import OrderTemplates from './private/OrderTemplates/OrderTemplates';
 
-function Routes(){
+function Routes() {
 
-    const isAuthenticated = localStorage.getItem('token');
-
-    function PrivateRoute({ children, ...rest }){
+    function PrivateRoute({ children, ...rest }) {
         return (
             <Route {...rest} render={() => {
-                return isAuthenticated
+                return localStorage.getItem('token')
                     ? children
                     : <Redirect to="/" />
             }} />
@@ -24,6 +27,21 @@ function Routes(){
             </Route>
             <PrivateRoute path="/settings">
                 <Settings />
+            </PrivateRoute>
+            <PrivateRoute path="/dashboard">
+                <Dashboard />
+            </PrivateRoute>
+            <PrivateRoute path="/monitors">
+                <Monitors />
+            </PrivateRoute>
+            <PrivateRoute path="/automations">
+                <Automations />
+            </PrivateRoute>
+            <PrivateRoute path="/orders/:symbol?">
+                <Orders />
+            </PrivateRoute>
+            <PrivateRoute path="/orderTemplates/:symbol?">
+                <OrderTemplates />
             </PrivateRoute>
         </BrowserRouter>
     )

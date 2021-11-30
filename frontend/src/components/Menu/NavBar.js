@@ -1,28 +1,21 @@
 import React from 'react';
 
-function NavBar(){
+function NavBar() {
     return (
         <React.Fragment>
             <nav className="navbar navbar-dark navbar-theme-primary px-4 col-12 d-lg-none">
-                <a class="navbar-brand me-lg-5" href="/dashboard">
-                    <img class="navbar-brand-dark" src="../assets/img/brand/light.svg" alt="Volt logo" /> <img class="navbar-brand-light" src="../assets/img/brand/dark.svg" alt="Volt logo" />
+                <a className="navbar-brand me-lg-5" href="/dashboard">
+                    <img className="navbar-brand-light" src="/img/brand/light.svg" alt="Beholder logo" />
                 </a>
-      
-                <div class="d-flex align-items-center">
-                    <button class="navbar-toggler d-lg-none collapsed" 
-                            type="button" 
-                            data-bs-toggle="collapse" 
-                            data-bs-target="#sidebarMenu" 
-                            aria-controls="sidebarMenu" 
-                            aria-expanded="false" 
-                            aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                <div className="d-flex align-items-center">
+                    <button className="navbar-toggler d-lg-none collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
                     </button>
                 </div>
             </nav>
-      
         </React.Fragment>
-    )
+    );
 }
 
 export default NavBar;
